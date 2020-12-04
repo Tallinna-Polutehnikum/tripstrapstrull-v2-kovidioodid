@@ -2,7 +2,7 @@
 import os
 import time
 import random
-import socket # For multiplayer
+# import mysql.connector # For multiplayer
 # Global variables
 inputFields = ['1','2','3','4','5','6','7','8','9']
 mode = 0
@@ -17,7 +17,6 @@ def menu():
     print('Choose game mode:')
     print('1. Player vs player')
     print('2. Singleplayer')
-    print('3. Multiplayer')
     mode = int(input('--->'))
     draw(inputFields)
 
@@ -34,7 +33,6 @@ def draw(i):
     # If game mode is choosed
     if mode == 1: pvp()
     if mode == 2: singleplayer()
-    if mode == 3: multiplayer()
     else: menu()
 
 # Player vs player logic
@@ -96,12 +94,6 @@ def singleplayer():
         if player == 'x': player = 'o'
         else: player = 'x'
     check()
-
-# Multiplayer logic
-def multiplayer():
-    sock = socket.socket()
-    sock.connect(('localhost', 9090))
-    sock.close()
 
 def check():
     global player
