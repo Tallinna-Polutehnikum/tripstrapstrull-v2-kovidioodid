@@ -2,7 +2,7 @@
 import os
 import time
 import random
-# import mysql.connector # For multiplayer
+# import mysql.connector #MySQL for online (coming soon) :)
 # Global variables
 inputFields = ['1','2','3','4','5','6','7','8','9']
 mode = 0
@@ -33,6 +33,7 @@ def draw(i):
     # If game mode is choosed
     if mode == 1: pvp()
     if mode == 2: singleplayer()
+    # if mode == 3: multiplayer() # coming soon :)
     else: menu()
 
 # Player vs player logic
@@ -94,6 +95,12 @@ def singleplayer():
         if player == 'x': player = 'o'
         else: player = 'x'
     check()
+
+# # Multiplayer (coming soon... :))
+# def multiplayer():
+#     mydb = mysql.connector.connect(host="sql7.freemysqlhosting.net",user="sql7380197",password="Rk9C^!Kby(4o5Ebh")
+
+#     print(mydb)
 
 def check():
     global player
